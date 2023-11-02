@@ -43,6 +43,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'currency_app.apps.CurrencyAppConfig',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
