@@ -1,7 +1,13 @@
+# Standard Library
 import uuid
+
+# Django
 from django.test import TestCase
+
+# 3rd-party
 from rest_framework.exceptions import ValidationError
 
+# Project
 from currency_app.models import Currency
 
 

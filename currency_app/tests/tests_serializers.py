@@ -1,6 +1,8 @@
+# Standard Library
 import datetime
 from unittest import TestCase
 
+# Project
 from currency_app.models import Currency
 from currency_app.serializers import CurrencySerializer
 

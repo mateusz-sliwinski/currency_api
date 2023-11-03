@@ -1,8 +1,12 @@
+# Django
 from django.test import TestCase
+
+# 3rd-party
 from rest_framework.test import APIClient
+
+# Project
 from currency_app.models import Currency
 from currency_app.serializers import CurrencySerializer
-from django.test import override_settings
 
 
 class CurrencyListViewTestCase(TestCase):
