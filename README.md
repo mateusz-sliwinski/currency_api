@@ -25,7 +25,6 @@ pip install -r requirements_dev.txt
 
 During the migration, an administrator with the nickname 'admin' and password 'admin' is created. Additionally, data is downloaded from an external database, and this process should conclude with three iterations.```bash
 python manage.py migrate
-```
 
 4. Start the development server.
 
