@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'currency_app.apps.CurrencyAppConfig',
     'rest_framework',
     'django_filters',
+    'rangefilter',
 ]
 
 MIDDLEWARE = [

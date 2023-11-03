@@ -1,14 +1,25 @@
 from django.contrib import admin
+from rangefilter.filters import DateRangeFilter
 
-from currency_app.models import Currency, ExchangeRate
+from currency_app.models import Currency
 
 
-# Register your models here.
 @admin.register(Currency)
 class CurrencyAdmin(admin.ModelAdmin):  # noqa D101
-    pass
-
-
-@admin.register(ExchangeRate)
-class ExchangeRateAdmin(admin.ModelAdmin):  # noqa D101
-    pass
+    list_display = [
+        'code',
+        'date',
+        'rate',
+    ]
+    list_filter = [
+        ('date', DateRangeFilter),
+    ]
+    list_display_links = (
+        'code',
+    )
+    list_editable = [
+        'rate',
+    ]
+    search_fields = [
+        'code',
+    ]
