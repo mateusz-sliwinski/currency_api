@@ -1,6 +1,10 @@
+# Django
 from django.contrib import admin
+
+# 3rd-party
 from rangefilter.filters import DateRangeFilter
 
+# Project
 from currency_app.models import Currency
 
 

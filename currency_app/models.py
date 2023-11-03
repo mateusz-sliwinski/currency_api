@@ -1,4 +1,7 @@
+# Standard Library
 import uuid
+
+# Django
 from django.db import models
 
 

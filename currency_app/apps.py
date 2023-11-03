@@ -1,3 +1,4 @@
+# Django
 from django.apps import AppConfig
 
 
@@ -6,4 +7,5 @@ class CurrencyAppConfig(AppConfig):
     name = 'currency_app'
 
     def ready(self):
+        # Project
         import currency_app.signals

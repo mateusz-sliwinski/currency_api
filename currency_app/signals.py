@@ -1,8 +1,15 @@
+# Standard Library
+from datetime import date
+
+# Django
+from django.contrib.auth.models import User
 from django.db.models.signals import post_migrate
 from django.dispatch import receiver
-from django.contrib.auth.models import User
+
+# 3rd-party
 import yfinance as yf
-from datetime import date
+
+# Project
 from currency_app.models import Currency
 
 
