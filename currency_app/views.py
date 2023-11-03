@@ -1,8 +1,8 @@
 from rest_framework import generics
 from .models import Currency
-from .serializers import CurrencyWithExchangeRateSerializer
+from .serializers import CurrencySerializer
 
 
-class CurrencyWithExchangeRateListView(generics.ListAPIView):
+class CurrencyListView(generics.ListAPIView):
     queryset = Currency.objects.all()
-    serializer_class = CurrencyWithExchangeRateSerializer
+    serializer_class = CurrencySerializer

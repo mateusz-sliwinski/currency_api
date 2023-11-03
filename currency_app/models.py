@@ -16,7 +16,9 @@ class UUIDMixin(models.Model):
 
 
 class Currency(UUIDMixin, models.Model):
-    code = models.CharField(max_length=3, unique=True)
+    code = models.CharField(max_length=7)
+    date = models.DateField()
+    rate = models.DecimalField(max_digits=10, decimal_places=4)
 
     class Meta:
         verbose_name = 'Currency'
@@ -24,17 +26,3 @@ class Currency(UUIDMixin, models.Model):
 
     def __str__(self) -> str:
         return f'{self.code}'
-
-
-class ExchangeRate(UUIDMixin, models.Model):
-    currency_from = models.ForeignKey(Currency, related_name='rates_from', on_delete=models.CASCADE)
-    currency_to = models.ForeignKey(Currency, related_name='rates_to', on_delete=models.CASCADE)
-    date = models.DateField()
-    rate = models.DecimalField(max_digits=10, decimal_places=4)
-
-    class Meta:
-        verbose_name = 'ExchangeRate'
-        verbose_name_plural = 'ExchangeRates'
-
-    def __str__(self) -> str:
-        return f'{self.currency_to.code} {self.rate} '

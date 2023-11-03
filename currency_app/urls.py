@@ -1,9 +1,9 @@
 """Urls.py Files."""
 # Django
 from django.urls import path
-from currency_app.views import  CurrencyWithExchangeRateListView
+from currency_app.views import  CurrencyListView
 
 urlpatterns = [
-    path('currency/', CurrencyWithExchangeRateListView.as_view(), name='currency'),
+    path('currency/', CurrencyListView.as_view(), name='currency'),
 
 ]
