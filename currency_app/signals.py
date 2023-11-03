@@ -1,3 +1,4 @@
+"""Signals.py files."""
 # Standard Library
 from datetime import date
 
@@ -15,6 +16,23 @@ from currency_app.models import Currency
 
 @receiver(post_migrate)
 def create_tiers_and_superuser(sender, **kwargs):
+    """
+    Create superuser and initialize currency data after all migrations.
+
+    If no User objects exist, a superuser is created with:
+    - Username: 'admin'
+    - Email: 'admin@example.com'
+    - Password: 'admin'
+
+    If no Currency objects exist, download and store currency data.
+
+    Parameters:
+    sender: The sender of the signal.
+    **kwargs: Additional keyword arguments provided by the signal.
+
+    Returns:
+    None
+    """
     if not User.objects.all():
         superuser = User.objects.create_superuser(
             username='admin',
@@ -35,5 +53,5 @@ def create_tiers_and_superuser(sender, **kwargs):
                 Currency.objects.create(
                     code=currency_pair,
                     date=date(idx.year, idx.month, idx.day),
-                    rate=row['Close']
+                    rate=row['Close'],
                 ).save()

@@ -1,3 +1,4 @@
+"""Admin.py files."""
 # Django
 from django.contrib import admin
 
