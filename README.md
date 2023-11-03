@@ -12,6 +12,7 @@ The project is implemented in Django and uses a local database to store currency
 ```bash
 git clone https://github.com/mateusz-sliwinski/currency_api.git
 ```
+I used python 3.11 so I recommend using it
 
 2. Install project dependencies.
 
@@ -22,7 +23,7 @@ pip install -r requirements_dev.txt
 
 3. Run database migrations.
 
-```bash
+During the migration, an administrator with the nickname 'admin' and password 'admin' is created. Additionally, data is downloaded from an external database, and this process should conclude with three iterations.```bash
 python manage.py migrate
 ```
 
