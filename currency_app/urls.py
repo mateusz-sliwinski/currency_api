@@ -7,5 +7,4 @@ from currency_app.views import CurrencyListView
 
 urlpatterns = [
     path('currency/', CurrencyListView.as_view(), name='currency'),
-
 ]
